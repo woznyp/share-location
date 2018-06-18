@@ -1,0 +1,6 @@
+{
+    "": ["DashboardComponent"],
+    "/": ["DashboardComponent"],
+    "/dashboard": ["DashboardComponent"],
+    "/login": ["LoginComponent"]
+}

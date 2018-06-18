@@ -2,6 +2,7 @@ const path = require('path'),
 HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  devtool: 'source-map',
   entry: './frontend/',
   output: {
     filename: 'bundle.js',
