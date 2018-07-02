@@ -42,13 +42,13 @@ export class RouterComponent extends Component {
         if (this.component) {
             this.component.remove();
         }
-        console.log(ev.detail);
-        const path = ev.detail.href,
-            COMPONENT = new COMPONENTS[this.routes[path]]();
+
+        const PATH = this.routes[ev.detail.href] ? ev.detail.href : '/',
+        COMPONENT = new COMPONENTS[this.routes[PATH]]();
         COMPONENT.view.appendTo(this._view);
 
         this.component = COMPONENT;
-        window.history.pushState(null, null, path);
+        window.history.pushState(null, null, PATH);
     }
 
     route(ev) {

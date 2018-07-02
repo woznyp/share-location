@@ -7,11 +7,22 @@ export class LoginComponentView extends View {
         this.create();
     }
     create() {
-        const component = DOM.create('div', { classList: 'login__component' }),
-            loginInput = DOM.create('input', { classList: 'input__field' }),
-            passwordInput = DOM.create('input', { classList: 'input__field' });
+        const COMPONENT = DOM.create('div', { id: 'login__component' }),
+            LOGIN_INPUT = DOM.create('input', {
+                classList: 'input__text__field',
+                name: 'login',
+                placeholder: 'login',
+                onkeyup: this.props.onChange
+            }),
+            PASSWORD_INPUT = DOM.create('input', {
+                classList: 'input__password__field',
+                name: 'password',
+                placeholder: 'password',
+                type: 'password',
+                onkeyup: this.props.onChange
+            });
 
-        DOM.appendMultiTo([loginInput, passwordInput], component);
-        this._raw = component;
+        DOM.appendMultiTo([LOGIN_INPUT, PASSWORD_INPUT], COMPONENT);
+        this._raw = COMPONENT;
     }
 }

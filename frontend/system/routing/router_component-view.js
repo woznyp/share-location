@@ -8,8 +8,8 @@ export class RouterComponentView extends View {
         this.create();
     }
     create() {
-        const component = DOM.create('div', { id: 'app' });
+        const COMPONENT = DOM.create('div', { id: 'app' });
 
-        this._raw = component;
+        this._raw = COMPONENT;
     }
 }

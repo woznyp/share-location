@@ -8,8 +8,8 @@ export class AnchorComponentView extends View {
         this.registerListeners();
     }
     create() {
-        const component = DOM.create('a', this.props);
-        this._raw = component;
+        const COMPONENT = DOM.create('a', this.props);
+        this._raw = COMPONENT;
     }
     registerListeners() {
         this._raw.addEventListener('click', ev => {
