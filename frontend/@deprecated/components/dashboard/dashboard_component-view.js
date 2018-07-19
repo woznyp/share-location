@@ -3,6 +3,7 @@ import View from '../../utils/view';
 import { AnchorComponent } from '../../elements/anchor/anchor_component';
 import { TopBarComponent } from '../top-bar/top-bar_component';
 import { LocationComponent } from '../location/location_component';
+import './dashboard_component.scss';
 
 export class DashboardComponentView extends View {
     constructor() {
@@ -15,7 +16,8 @@ export class DashboardComponentView extends View {
             TITLE = DOM.create('h2',{innerText:'Share location'}),
             LOGOUT = new AnchorComponent({
                 href: '/logout',
-                innerText: 'logout'
+                innerHTML: '&#8861;',
+                id: 'logout__button'
             }),
             LOCATION = new LocationComponent();
 

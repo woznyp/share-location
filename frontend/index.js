@@ -1,8 +1,6 @@
-import { RouterComponent } from './system/routing/router_component';
 import './style.scss';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import MainComponent from './components/main__component.jsx';
 
-document.onreadystatechange = () => {
-    if (document.readyState === 'complete') {
-        new RouterComponent();
-    }
-};
+ReactDOM.render(<MainComponent></MainComponent>,document.querySelector('#app'));
