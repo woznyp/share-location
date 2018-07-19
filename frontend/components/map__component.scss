@@ -2,6 +2,12 @@
 	height: 100vh;
 	width: 100vw;
 	img[src^="http://0.gravatar"] {
-		border-radius: 100%;
+        border-radius: 100%;
 	}
+}
+#share__button{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 1101;
 }

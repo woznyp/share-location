@@ -1,22 +1,8 @@
-const express = require('express'),
-    cors = require('cors'),
-    bodyParser = require('body-parser'),
-    app = express();
+const WebSocket = require('ws'),
+	WEBSOCKET_SERVER = new WebSocket.Server({ port: 5556 });
 
-app.use(cors());
-app.use(bodyParser.json());
-app.use(
-    bodyParser.urlencoded({
-        extended: true
-    })
-);
-
-app.use(express.static(__dirname + '/../static'));
-
-app.get('*', (req, res) => {
-    res.sendFile('index.html', { root: __dirname + '/../static' });
-});
-
-app.listen(5555, () => {
-    console.log('Server started at:', new Date(), 'on port 5555');
+WEBSOCKET_SERVER.on('message', msg => {
+	WEBSOCKET_SERVER.clients.forEach(client => {
+		client.send(msg);
+	});
 });
